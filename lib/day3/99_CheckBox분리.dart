@@ -50,6 +50,7 @@ class _MyAppState extends State<MyApp> {
                   MyCheckBox("망곰1", imgUrl: imgList[0]),
                   MyCheckBox("망곰2", imgUrl: imgList[1]),
                   MyCheckBox("망곰3", imgUrl: imgList[2]),
+
                 ],
 
               ),
