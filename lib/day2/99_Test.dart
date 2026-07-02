@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController idCtrl = TextEditingController();
+    TextEditingController numCtrl = TextEditingController();
     List<String> labels = [
       'C', '(', '%', '/',
       '7', '8', '9', '*',
@@ -25,7 +25,8 @@ class MyApp extends StatelessWidget {
               child: Column(
                 children: [
                   TextField(
-                    controller: idCtrl,
+                    controller: numCtrl,
+                    textAlign: TextAlign.end,
                     // obscureText: true,
                     decoration: InputDecoration(
                       labelText: "숫자",
