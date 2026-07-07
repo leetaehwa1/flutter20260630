@@ -64,7 +64,7 @@ class _EditScreenState extends State<EditScreen> {
                     ),
                     SizedBox(width: 12),
                     Text(
-                      '메모 작성',
+                      '메모 수정',
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
