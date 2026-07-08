@@ -50,12 +50,26 @@ class MyApp extends StatelessWidget {
       final snapshot =  
         await fs.collection("users")
                   // .where("age", isGreaterThan: 20) // age > 20
-                  .where("age", isGreaterThanOrEqualTo: 25) // age >= 25
+                  .where("age", isGreaterThanOrEqualTo: 20) // age >= 25
                   // .orderBy("age") // age 필드 기준으로 오름차순
                   .orderBy("age", descending: true) // age 필드 기준으로 내림차순
                   .get();
+      // snapshot
+      for(var doc in snapshot.docs){
+        Map<String, dynamic> user = doc.data();
+        print("문서 ID : ${doc.id} , 이름 : ${user["name"]}, 나이 : ${user["age"]}");
+      }
     }
 
+    Future<void> updateUser() async{
+      fs.collection("users").doc("xajxvG566KOfJtpT46fm").update({
+        "name" : "박영희",
+        "age" : 25
+      });
+    }
+    Future<void> deleteUser() async{
+      fs.collection("users").doc("BvMQWfRXAYtzYd1AwH6C").delete();
+    }
 
     return MaterialApp(
       home: Scaffold(
@@ -66,6 +80,18 @@ class MyApp extends StatelessWidget {
               ElevatedButton(
                   onPressed: addUser, 
                   child: Text("추가!")
+              ),
+              ElevatedButton(
+                  onPressed: getUserList,
+                  child: Text("조회!")
+              ),
+              ElevatedButton(
+                  onPressed: updateUser,
+                  child: Text("수정")
+              ),
+              ElevatedButton(
+                  onPressed: deleteUser,
+                  child: Text("삭제")
               )
             ],
           ),
