@@ -44,9 +44,9 @@ dependencies:
   cupertino_icons: ^1.0.8
   image_picker: ^1.2.3
   showcaseview: ^5.1.0
-  portone_flutter: ^1.0.1
+#  portone_flutter: ^1.0.1
   circular_menu: ^4.0.0
-  flutter_inappwebview: ^6.1.5
+#  flutter_inappwebview: ^6.1.5
 
 dev_dependencies:
   flutter_test:
