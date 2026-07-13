@@ -60,7 +60,7 @@ class _ImagePickerScreenState extends State<ImagePickerScreen> {
             ),
             width: 300, height: 300,
             child: _image != null ? ClipOval(
-              child: Image.file(_image!, fit: BoxFit.cover,),
+              child: Image.file(_image!, fit: BoxFit.cover),
             ) : Center(child: Text("이미지 없음"),),
           ),
           SizedBox(height: 10,),
